@@ -77,12 +77,20 @@ public class Welcome extends JFrame implements ActionListener {
                     preparedStatement.setString(2,textField2.getText());
                     ResultSet resultSet = preparedStatement.executeQuery();
                     if (resultSet.next()){
-                        System.out.println("登录成功");
+                        JOptionPane.showMessageDialog(null,"登录成功！","提示消息",JOptionPane.WARNING_MESSAGE);
+//                        System.out.println("登录成功");
                         this.setVisible(false);
+                        Manager manager = new Manager();
+                    } else {
+                        System.out.println("用户名或密码错误，请重新输入");
                     }
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
+            }else if (textField1.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null,"请输入用户名","提示消息",JOptionPane.WARNING_MESSAGE);
+            }else if (textField2.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null,"请输入密码","提示消息",JOptionPane.WARNING_MESSAGE);
             }
 
         }else if (e.getActionCommand() == "注册"){
