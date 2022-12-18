@@ -36,7 +36,9 @@ public class Manager extends JFrame implements ActionListener {
 		//添加
 		button1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-
+				System.out.println("Add");
+				Add add = new Add();
+				add.setVisible(true);
 			}
 		});
 

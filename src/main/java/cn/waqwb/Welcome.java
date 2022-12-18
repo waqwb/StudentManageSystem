@@ -31,8 +31,6 @@ public class Welcome extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         login = new Login();
         login.setLayout(null);
-//        GridLayout gridLayout = new GridLayout(3, 2);
-//        login.setLayout(gridLayout);
         label1 = new JLabel("用 户 名");
         label1.setBounds(10,20,80,25);
         login.add(label1);
